@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Duck Multiplier</title>
+<style>body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:system-ui,sans-serif;background:#bfe9ff;color:#222;overflow:hidden;text-align:center}
+button{font-size:1.6rem;padding:18px 36px;border:none;border-radius:999px;background:#f5a623;color:#fff;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.25);position:relative;z-index:5}button:active{transform:translateY(4px)}
+#out{font-size:1.4rem;margin:24px 16px;min-height:3em;max-width:600px;position:relative;z-index:5}
+.d{position:fixed;font-size:2rem;transition:all 1s}</style></head><body>
+<button id="b">Do NOT press</button><p id="out">There is currently 1 duck. 🦆</p>
+<script>let n=1,k=0;const msgs=["You pressed it.","The ducks are organising.","Duck union formed.","They have a manifesto.","Please stop.","The ducks elected a president.","This is your fault.","The ducks now own the website."];
+function duck(){const d=document.createElement('div');d.className='d';d.textContent='🦆';d.style.left=innerWidth/2+'px';d.style.top=innerHeight/2+'px';document.body.appendChild(d);requestAnimationFrame(()=>requestAnimationFrame(()=>{d.style.left=Math.random()*innerWidth+'px';d.style.top=Math.random()*innerHeight+'px';d.style.transform='rotate('+Math.random()*720+'deg)'}))}
+b.onclick=()=>{const add=Math.min(n,300);for(let i=0;i<add;i++)duck();n*=2;out.textContent=msgs[Math.min(k++,msgs.length-1)]+' There are now '+n.toLocaleString()+' ducks. 🦆'}</script></body></html>
